@@ -21,28 +21,35 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     super.initState();
 
     controller = AnimationController(
-      duration: Duration(seconds: 1),
+      duration: Duration(seconds: 3),
       vsync: this, //initializing the ticker
       //upperBound: 100.0,
     );
 
-    animation = CurvedAnimation(
-        parent: controller,
-        curve: Curves
-            .decelerate); //when applying curve to controller we cant apply upperBound > 1
+    // animation = CurvedAnimation(
+    //     parent: controller,
+    //     curve: Curves
+    //         .decelerate); //when applying curve to controller we cant apply upperBound > 1
 
     //controller.forward();               //calling the controller IMP : you can also call reverse
     //controller.reverse(from: 1.0);          //reverse animation
 
-    //forward animation
+    //forward animation -------------------------------------..........
+
+    // controller.forward();
+    // animation.addStatusListener((status) {
+    //   if (status == AnimationStatus.completed) {
+    //     controller.reverse(from: 1.0);
+    //   } else if (status == AnimationStatus.dismissed) {
+    //     controller.forward();
+    //   }
+    // });
+    //----------------------------------------------------------------
+
+    animation = ColorTween(begin: Colors.blue[800], end: Colors.white)
+        .animate(controller);             //Tween animations
+
     controller.forward();
-    animation.addStatusListener((status) {
-      if (status == AnimationStatus.completed) {
-        controller.reverse(from: 1.0);
-      } else if (status == AnimationStatus.dismissed) {
-        controller.forward();
-      }
-    });
 
     controller.addListener(() {
       setState(() {});
@@ -61,7 +68,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: animation.value,
       //backgroundColor: Colors.red.withOpacity(controller.value),      //using ticker animations
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
@@ -75,7 +82,8 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                   tag: 'logo',
                   child: Container(
                     child: Image.asset('images/logo.png'),
-                    height: animation.value * 100, //animation value
+                    height: 60.0,
+                    //height: animation.value * 100, //animation value
                     //height: controller.value, //controlling size by ticker animations
                   ),
                 ),
