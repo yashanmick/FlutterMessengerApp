@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "181057713111",
+    "firebase_url": "https://messengerapp-8ecd4.firebaseio.com",
+    "project_id": "messengerapp-8ecd4",
+    "storage_bucket": "messengerapp-8ecd4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:181057713111:android:92c221954e114123bfd192",
+        "android_client_info": {
+          "package_name": "co.yashanmick.flash_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "181057713111-vrmd766l98rl0cr6al5ksol1111ls3n5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8zzdXNEnsUoWIhs3O7nElRoO7phc6qJA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "181057713111-vrmd766l98rl0cr6al5ksol1111ls3n5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
